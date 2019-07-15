@@ -6,7 +6,7 @@ public class KthSmallestElementBST_230 {
       TreeNode right;
       TreeNode(int x) { val = x; }
  }
-    
+
     int n = 0;
     int res = -1;
     public int kthSmallest(TreeNode root, int k) {
