@@ -40,7 +40,7 @@ public class RotateList_61 {
         mid.next = null;
         return ret;
 
-    
+
 
     }
 
