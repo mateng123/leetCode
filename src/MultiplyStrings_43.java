@@ -33,7 +33,7 @@ public class MultiplyStrings_43 {
     }
 
     public static void main(String[] args) {
-        String a = new MultiplyStrings_43().multiply("789","456");
+        String a = new MultiplyStrings_43().multiply("4","4");
         System.out.println(a);
     }
 }
