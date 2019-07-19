@@ -1,6 +1,6 @@
 
 public class HouseRobber_198 {
-    
+
         public int rob(int[] num) {
             int prevMax = 0;
             int Max = 0;
