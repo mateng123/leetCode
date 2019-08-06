@@ -5,7 +5,10 @@ public class MinStack_155 {
     int size;
     int propity;
     ArrayList<Integer> list;
-    /** initialize your data structure here. */
+
+    /**
+     * initialize your data structure here.
+     */
     public MinStack_155() {
         list = new ArrayList<>(10);
         size = 0;
@@ -17,19 +20,19 @@ public class MinStack_155 {
     }
 
     public void pop() {
-        list.remove(size-1);
+        list.remove(size - 1);
         size--;
     }
 
     public int top() {
-        return list.get(size-1);
+        return list.get(size - 1);
     }
 
     public int getMin() {
         int min = Integer.MAX_VALUE;
-        for(int num: list){
-            if(num<min){
-                min=num;
+        for (int num : list) {
+            if (num < min) {
+                min = num;
             }
         }
         return min;

@@ -7,32 +7,32 @@ public class ValidAnagram_242 {
         int sLength = s.length();
         int tLength = t.length();
 
-        if(sLength==0&&tLength==0){
+        if (sLength == 0 && tLength == 0) {
             return true;
         }
-        if(sLength==0||tLength==0){
+        if (sLength == 0 || tLength == 0) {
             return false;
         }
-        HashMap<Character,Integer> map = new HashMap<>();
+        HashMap<Character, Integer> map = new HashMap<>();
 
-        for(int i=0;i<sLength;i++){
-            if(map.containsKey(s.charAt(i))){
-                map.put(s.charAt(i),map.get(s.charAt(i))+1);
-            }else{
-                map.put(s.charAt(i),1);
+        for (int i = 0; i < sLength; i++) {
+            if (map.containsKey(s.charAt(i))) {
+                map.put(s.charAt(i), map.get(s.charAt(i)) + 1);
+            } else {
+                map.put(s.charAt(i), 1);
             }
         }
 
-        for(int j=0;j<tLength;j++){
-            if(map.containsKey(t.charAt(j))){
-                map.put(t.charAt(j),map.get(t.charAt(j))-1);
-            }else{
+        for (int j = 0; j < tLength; j++) {
+            if (map.containsKey(t.charAt(j))) {
+                map.put(t.charAt(j), map.get(t.charAt(j)) - 1);
+            } else {
                 return false;
             }
         }
 
-        for(int value:map.values()){
-            if (value!=0){
+        for (int value : map.values()) {
+            if (value != 0) {
                 return false;
             }
         }
@@ -40,6 +40,6 @@ public class ValidAnagram_242 {
     }
 
     public static void main(String[] args) {
-        new ValidAnagram_242().isAnagram ("anagram","nagaram");
+        new ValidAnagram_242().isAnagram("anagram", "nagaram");
     }
 }

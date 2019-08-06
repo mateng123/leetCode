@@ -1,12 +1,16 @@
 import java.util.*;
+
 public class BinaryTreeInorderTraversal_ {
 
     public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 
     //递归
 //     public List<Integer> inorderTraversal(TreeNode root) {
@@ -30,8 +34,8 @@ public class BinaryTreeInorderTraversal_ {
         Stack<TreeNode> stack = new Stack<>();
 
         TreeNode cur = root;
-        while(!stack.isEmpty()||cur!=null){
-            while(cur!=null){
+        while (!stack.isEmpty() || cur != null) {
+            while (cur != null) {
                 stack.push(cur);
                 cur = cur.left;
             }

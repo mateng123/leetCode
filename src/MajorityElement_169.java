@@ -17,21 +17,21 @@ public class MajorityElement_169 {
 //        return res;
 //    }
     public int majorityElement(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
 
-        for(int num : nums){
-            if(map.containsKey(num)==false){
-                map.put(num,0);
-            }else{
-                map.put(num,map.get(num)+1);
+        for (int num : nums) {
+            if (map.containsKey(num) == false) {
+                map.put(num, 0);
+            } else {
+                map.put(num, map.get(num) + 1);
             }
         }
 
-        int maxValue=0;
+        int maxValue = 0;
         int maxNum = nums[0];
 
-        for(int key:map.keySet()){
-            if(map.get(key)>maxValue){
+        for (int key : map.keySet()) {
+            if (map.get(key) > maxValue) {
                 maxValue = map.get(key);
                 maxNum = key;
             }

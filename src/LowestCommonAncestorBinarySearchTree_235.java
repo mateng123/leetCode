@@ -1,15 +1,17 @@
 public class LowestCommonAncestorBinarySearchTree_235 {
 
 
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-      public class TreeNode {
-         int val;
-          TreeNode left;
-          TreeNode right;
-          TreeNode(int x) { val = x; }
-      }
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 
-      //递归写法
+    //递归写法
 //    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 //        int pVal = p.val;
 //        int qVal = q.val;
@@ -36,12 +38,12 @@ public class LowestCommonAncestorBinarySearchTree_235 {
 
         TreeNode curNode = root;
 
-        while(curNode!=null){
-            if(pVal<curNode.val && qVal < curNode.val){
+        while (curNode != null) {
+            if (pVal < curNode.val && qVal < curNode.val) {
                 curNode = curNode.left;
-            }else if(pVal>curNode.val && qVal>curNode.val){
+            } else if (pVal > curNode.val && qVal > curNode.val) {
                 curNode = curNode.right;
-            }else{
+            } else {
                 return curNode;
             }
         }

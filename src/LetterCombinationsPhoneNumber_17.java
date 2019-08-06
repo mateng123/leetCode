@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class LetterCombinationsPhoneNumber_17 {
     Map<String, String> phone = new HashMap<String, String>() {{
         put("2", "abc");
@@ -14,21 +15,21 @@ public class LetterCombinationsPhoneNumber_17 {
     List<String> output = new ArrayList<String>();
 
     public List<String> letterCombinations(String digits) {
-        if(digits.length()!=0)
-            backtrack("",digits);
+        if (digits.length() != 0)
+            backtrack("", digits);
         return output;
     }
 
-    public void backtrack(String str,String digits){
-        if(digits.length()==0){
+    public void backtrack(String str, String digits) {
+        if (digits.length() == 0) {
             output.add(str);
             return;
-        }else{
-            String nextDigit = digits.substring(0,1);
+        } else {
+            String nextDigit = digits.substring(0, 1);
             String letters = phone.get(nextDigit);
-            for(int i=0;i<letters.length();i++){
-                String letter = phone.get(nextDigit).substring(i,i+1);
-                backtrack(str+letter,digits.substring(1));
+            for (int i = 0; i < letters.length(); i++) {
+                String letter = phone.get(nextDigit).substring(i, i + 1);
+                backtrack(str + letter, digits.substring(1));
             }
         }
 

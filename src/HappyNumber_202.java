@@ -7,20 +7,20 @@ public class HappyNumber_202 {
 
         Set<Integer> set = new HashSet<>();
 
-        while(n!=1){
+        while (n != 1) {
 
-            int sum=0;
-            while(n!=0){
-                int temp = n%10;
-                n=n/10;
-                sum += temp*temp;
+            int sum = 0;
+            while (n != 0) {
+                int temp = n % 10;
+                n = n / 10;
+                sum += temp * temp;
             }
-            if(set.contains(sum)){
+            if (set.contains(sum)) {
                 return false;
-            }else{
+            } else {
                 set.add(sum);
             }
-            n=sum;
+            n = sum;
         }
         return true;
     }

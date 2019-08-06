@@ -3,11 +3,14 @@ import java.util.*;
 public class SymmetricTree_101 {
 
     public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 
     //递归
 //     public boolean isSymmetric(TreeNode root) {
@@ -30,21 +33,21 @@ public class SymmetricTree_101 {
     //迭代
     public boolean isSymmetric(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
-        if(root==null){
+        if (root == null) {
             return true;
         }
         queue.offer(root);
         queue.offer(root);
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeNode node1 = queue.poll();
             TreeNode node2 = queue.poll();
 
-            if(node1==null&&node2==null){
+            if (node1 == null && node2 == null) {
                 continue;
             }
 
-            if((node1==null||node2==null)||(node1.val!=node2.val)){
+            if ((node1 == null || node2 == null) || (node1.val != node2.val)) {
                 return false;
             }
             queue.add(node1.left);

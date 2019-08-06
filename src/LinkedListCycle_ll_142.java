@@ -1,17 +1,18 @@
 public class LinkedListCycle_ll_142 {
 
     class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) {
-          val = x;
-          next = null;
-      }
-  }
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
 
     public ListNode detectCycle(ListNode head) {
         ListNode pos = null;
-        if(head==null||head.next==null){
+        if (head == null || head.next == null) {
             return pos;
         }
 
@@ -19,22 +20,22 @@ public class LinkedListCycle_ll_142 {
         ListNode fast = head;
 
         ListNode temp = null;
-        while(fast!=null&&fast.next!=null){
-            fast =fast.next.next;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
             slow = slow.next;
-            if(slow == fast){
+            if (slow == fast) {
                 temp = slow;
                 break;
             }
         }
 
-        if(temp == null){
+        if (temp == null) {
             return pos;
         }
 
         pos = head;
 
-        while(pos!=temp){
+        while (pos != temp) {
             pos = pos.next;
             temp = temp.next;
         }
